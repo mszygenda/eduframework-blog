@@ -1,11 +1,5 @@
 <h1>Posts</h1>
 
 {{#posts}}
-<div class="post">
-  <div class="actions">
-    <a href="/post/delete/{{id}}">✖</a>
-  </div>
-  <p class="post_title">{{title}}</p>
-  <p class="post_content">{{content}}</p>
-</div>
+  {{> posts/_post.html }}
 {{/posts}}
