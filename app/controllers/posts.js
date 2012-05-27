@@ -22,3 +22,12 @@ actions['all'] = function () {
     self.respond();    
   });
 };
+
+actions['delete'] = function () {
+  var postId;
+
+  postId = this.params['id'];
+  model.post.manager.find(postId)['delete']();
+
+  this.redirectTo('posts', 'all');
+};

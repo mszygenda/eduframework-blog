@@ -3,13 +3,22 @@
   <head>
     <title>{{title}}</title>
     <link rel="StyleSheet" href="/static/style.css" TYPE="text/css" media="screen" />
-
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   </head>
   <body>
-    <div id="menu">
-      <a href="/post/new">Add new post</a>
-      <a href="/posts">Post list</a>
+    <div id="main">
+      <div id="menu">
+        <a href="/">Home</a>
+        <a href="/post/new">Add new post</a>
+        <a href="/posts">Post list</a>
+        <a href="/about">eduFramework</a>
+      </div>
+      <div id="content">
+        {{{content}}}
+      </div>
+      <footer>
+        Powered by eduFramework
+      </footer>
     </div>
-    {{{content}}}
   </body>
 </html>

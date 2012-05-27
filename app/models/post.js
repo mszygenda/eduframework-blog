@@ -7,6 +7,10 @@ Post.save = function () {
   manager.save(this);
 };
 
+Post['delete'] = function () {
+  manager['delete'](this);
+};
+
 Post.clone = function () {
   var clone = createPost();
 
@@ -28,11 +32,17 @@ manager.save = function (post) {
   posts[post.id] = postCopy;
 };
 
+manager['delete'] = function (post) {
+  posts[post.id] = null;
+};
+
 manager.all = function (callback) {
   var copy = [];
 
   for (i = 0; i < posts.length; i += 1) {
-    copy.push(posts[i].clone());
+    if (posts[i]) {
+      copy.push(posts[i].clone());
+    }
   }
 
   return callback(copy);
